@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="userName" placeholder="Name">
+    <br>
+    <input type="text" id="text" placeholder="Message">
+    <br>
+    <button id="post">Cyka</button>
+    <div id="msgs"></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        const config = {
+            apiKey: "AIzaSyAl4qIrAr0pjNYnvPQLp3ubQ1jRipSmYTw",
+            authDomain: "gopnik-chat.firebaseapp.com",
+            databaseURL: "https://gopnik-chat.firebaseio.com",
+            projectId: "gopnik-chat",
+            storageBucket: "gopnik-chat.appspot.com",
+            messagingSenderId: "1075818501637"
+        };
+        const ui = {
+            userName: $("#userName"),
+            text: $("#text"),
+            postBtn: $("#post"),
+            output: $("#msgs")
+        }
+        firebase.initializeApp(config);
+        var db = firebase.database();
+        db.ref('/').on('child_added', function (snapshot) {
+            let snap = snapshot.val();
+            let text = snap.message;
+            let user = snap.user;
+            ui.output.append(
+               '<div class="message"> <p class="author">' + snap.user + '</p>' + '<p>' + snap.message + "</p></div>"
+            );
+            // console.log(snapshot.val());
+            
+        });
+        ui.postBtn.on("click", function () {
+            let msgUser = ui.userName.val();
+            let msgText = ui.text.val();
+            db.ref("/").push(
+                {
+                    user: msgUser,
+                    message: msgText
+                }
+            );
+            text.value = "";
+        });
+    </script>
+</body>
+</html>
