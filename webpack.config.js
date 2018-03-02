@@ -8,8 +8,9 @@ module.exports = {
         filename: "index.js"
     },
     devServer: {
-        contentBase: path.join(__dirname, "dist"),
+        
         port: 9000,
+        hot: true
     },
     plugins: [
         new WebpackNotifierPlugin({ alwaysNotify: true }),
