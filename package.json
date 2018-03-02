@@ -1,0 +1,41 @@
+{
+  "name": "chat-application",
+  "version": "1.0.0",
+  "description": "a firebase chat application, EC Utbildning/Edument",
+  "main": "index.js",
+  "scripts": {
+    "bundle": "webpack",
+    "copyindex": "cp views/index.html dist/index.html",
+    "copycss": "cp css/styles.css dist/css/styles.css",
+    "build": "npm run bundle && npm run copyindex && npm run copycss",
+    "start:dev": "webpack-dev-server",
+    "test": "echo \"Hello world!\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Koofii/chat-application.git"
+  },
+  "keywords": [
+    "chat",
+    "firebase",
+    "javascript",
+    "js",
+    "gopnik"
+  ],
+  "author": "robert s, kristoffer f, johan m",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Koofii/chat-application/issues"
+  },
+  "homepage": "https://github.com/Koofii/chat-application#readme",
+  "dependencies": {
+    "handlebars": "^4.0.11"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0",
+    "webpack-notifier": "^1.5.1"
+  }
+}
