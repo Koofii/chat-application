@@ -1,4 +1,5 @@
 # chat-application
 Groupproject
 
-This is an educational group project made by Robert, Johan and Kristoffer.
+This is project is part of our Education. 
+Made by Robert, Johan and Kristoffer
