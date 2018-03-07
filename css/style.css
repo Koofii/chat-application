@@ -12,9 +12,6 @@
 a{
     text-decoration: none;
 }
-li{
-    list-style: none;
-}
 body{
     background-color: #3D3D3D;
     margin: 0 auto;
@@ -33,11 +30,35 @@ nav{
     height: 100vh;
     position: fixed;
 }
+ul{
+    
+}
+li{
+    text-align: center;
+    list-style: none;
+    font-size: 30px;
+    display: block;
+    margin-top: 40px;
+}
+li:first-child{
+    margin-top: 80px;
+}
+#logo img{
+    width: 100%;
+    margin-top: 50px;
+}
 #reg-view{
     grid-column: 2/4;
 }
+#become-gopnik p{
+    margin: 0 auto;
+    text-align: center;
+}
+#become-gopnik p span{
+    text-decoration: underline;
+    cursor: pointer;
+}
 .regform{
-    display: block;
     display: flex;
     flex-direction: column;
 }
@@ -51,6 +72,11 @@ nav{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgb(83, 78, 78);
 }
+.regform p{
+    margin: 10px;
+    text-align: center;
+    font-size: 20px;
+}
 #signin-signout{
     text-align: center;
     padding: 10px;
@@ -61,10 +87,12 @@ nav{
     padding: 8px 20px 8px 20px;
     cursor: pointer;
 }
-.regform button{
-    margin-top: 10px;
+#sign-up-button{
     background-color: rgb(83, 78, 78);
     border: none;
     padding: 8px 20px 8px 20px;
     cursor: pointer;
+    width: 30%;
+    margin: 5px;
+    margin: 0 auto;
 }
