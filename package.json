@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/Koofii/chat-application#readme",
   "dependencies": {
+    "firebaseui": "^2.6.2",
     "handlebars": "^4.0.11"
   },
   "devDependencies": {

@@ -1,0 +1,70 @@
+@font-face{
+    font-family: 'gopnik';
+    src: url("../fonts/kremlin.ttf");
+}
+
+*{
+    font-family: 'gopnik';
+    margin: 0 auto;
+    padding: 0;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+body{
+    background-color: #3D3D3D;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 17% 66% 17%;
+}
+header{
+    grid-column: 2/4;
+    font-size: 50px;
+}
+nav{
+    width: 17%;
+    grid-column: 1/2;
+    border-right: 2px solid #707070;
+    grid-row: 1/grid-row-end;
+    height: 100vh;
+    position: fixed;
+}
+#reg-view{
+    grid-column: 2/4;
+}
+.regform{
+    display: block;
+    display: flex;
+    flex-direction: column;
+}
+.regform h3{
+    font-size: 30px;
+}
+.regform input{
+    width: 100%;
+    padding: 7px;
+    margin: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(83, 78, 78);
+}
+#signin-signout{
+    text-align: center;
+    padding: 10px;
+}
+#signin-signout button{
+    background-color: rgb(83, 78, 78);
+    border: none;
+    padding: 8px 20px 8px 20px;
+    cursor: pointer;
+}
+.regform button{
+    margin-top: 10px;
+    background-color: rgb(83, 78, 78);
+    border: none;
+    padding: 8px 20px 8px 20px;
+    cursor: pointer;
+}
