@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
@@ -30,7 +31,7 @@
             <li>Profile</li>
         </ul>
     </nav>
-    <div id="reg-view" class="view">
+    <!-- <div id="reg-view" class="view">
         <div class="regform sign-in">
             <h3>Sign in!</h3>
             <input type="text" id="email-signin" name="email" placeholder="Email" />
@@ -49,7 +50,7 @@
         <div class="regform sign-up">
             <p>Fill your details below and become real GOPPP!!!</p>
 
-            <!-- This form is currently used both to register and log in -->
+            This form is currently used both to register and log in
             <input type="text" id="fname" name="fname" placeholder="First name" />
 
             <input type="text" id="lname" name="lname" placeholder="Last name" />
@@ -67,19 +68,22 @@
 
             <button id="password-reset" name="verify-email" style="display: none;">Send Password Reset Email</button>
 
-            <!-- Container where we'll display the user details - usefull for checking info -->
-            <!-- <div class="user-details-container">
+            Container where we'll display the user details - usefull for checking info
+            <div class="user-details-container">
                     Firebase sign-in status: <span id="sign-in-status">Unknown</span>
                     <div>Firebase auth <code>currentUser</code> object value:</div>
                     <pre><code id="account-details">null</code></pre>
-                </div> -->
+                </div>
         </div>
-    </div>
+    </div> -->
     <!-- show when logged in -->
-    <!-- <div id="chatrooms">
+    <div id="chatrooms">
         <div class="rooms" id="room1">
             <div>
-                <p class="user">BOBNICK</p><p class="messages">OPA GOPNIK</p><span class="time-stamp">TIMESTAMP</span>
+                <p class="user">kristoffer_frejd</p> <p class="messages"> lorem20 Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, quo.</p><p class="time-stamp">TIMESTAMP</p>
+            </div>
+            <div>
+                    <p class="user">BOBNICK</p> <p class="messages"> lorem20 Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, quo.</p><p class="time-stamp">TIMESTAMP</p>
             </div>
         </div>
         <div class="rooms" id="room2">
@@ -88,19 +92,20 @@
         <div class="rooms" id="room3">
             <p class="user"></p><p class="messages"></p>
         </div>
-        <div id="input-box">
-            <input type="text">
-            <input type="submit">
-        </div>
-    </div> -->
+    </div>
+    <div id="input-box">
+        <input type="text" placeholder="Message here...">
+        <input type="submit" value="Send goptext">
+    </div>
     <!-- Show when logged in -->
-    <!-- <div id="list-of-users">
+    <div id="list-of-users">
+        <h2>List of Gopniks</h2>
         <ul>
             <li>Kofnik</li>
             <li>Robnik</li>
             <li>Johanik</li>
         </ul>
-    </div> -->
+    </div>
 
     <script src="js/index.js"></script>
 </body>
