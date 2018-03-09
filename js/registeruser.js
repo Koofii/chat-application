@@ -15,6 +15,11 @@ let auth = firebase.auth();
 let provider = new firebase.auth.GithubAuthProvider();
 let userId;
 
+function removeUserFromOnlineList(user) {
+    // const currentUser = auth.currentUser;
+    // db.ref("/online/").child(`${currentUser.uid}`).remove();
+    return null;
+}
 
 
 firebase.auth().onAuthStateChanged(function (currentUser) {
@@ -29,17 +34,20 @@ firebase.auth().onAuthStateChanged(function (currentUser) {
     }
 });
 
-db.ref("/users").on("child_changed", function (snapshot) {
-    console.log(snapshot.val());
-});
+// legacy
+// db.ref("/users").on("child_changed", function (snapshot) {
+//     console.log(snapshot.val());
+// });
+
 // This is used to log in and verify details
 function toggleSignIn() {
     if (firebase.auth().currentUser) {
-        const currentUser = firebase.auth().currentUser;
-        const userReference = db.ref(`/users/${currentUser.uid}`);
-        userReference.update({
-            online: false
-        });
+        // const currentUser = firebase.auth().currentUser;
+        // const userReference = db.ref(`/users/${currentUser.uid}`);
+        // userReference.update({
+        //     online: false
+        // });
+        removeUserFromOnlineList();
         firebase.auth().signOut();
     } else {
         var email = $('#email-signin').val()
@@ -58,9 +66,9 @@ function toggleSignIn() {
             .signInWithEmailAndPassword(email, password)
             .then(() => {
                 const currentUser = firebase.auth().currentUser;
-                const userReference = db.ref(`/users/${currentUser.uid}`);
-                userReference.update({
-                    online: true
+
+                db.ref(`/users/${currentUser.uid}`).once("value", snapshot => {
+                    db.ref(`/online/${currentUser.uid}`).set({ online: snapshot.val().username });
                 });
             })
             .catch(function (error) {
@@ -127,7 +135,7 @@ function handleSignUp() {
                         username: username,
                         firstname: fName,
                         lastname: lName,
-                        online: true
+                        //online: true
                     });
                 }
             });
@@ -178,3 +186,8 @@ function initApp() {
 window.onload = function () {
     initApp();
 };
+
+
+$(window).on("beforeunload", function () {
+    removeUserFromOnlineList();
+});
