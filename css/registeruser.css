@@ -1,0 +1,8 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+#become-gopnik p span{
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
