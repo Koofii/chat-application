@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
@@ -18,17 +18,16 @@
             <h1>GOPNIK CHAT</h1>
         </div>
     </header>
-    
+
     <nav>
         <div id="logo">
             <img src="images/logo-gop.png" alt="">
         </div>
         <!-- show when logged in -->
         <ul>
-            <li>Room 1</li>
-            <li>Room 2</li>
-            <li>Room 3</li>
-            <li>Profile</li>
+            <li data-value="room1">Room 1</li>
+            <li data-value="room2">Room 2</li>
+            <li data-value="room3">Room 3</li>
         </ul>
     </nav>
     <!-- <div id="reg-view" class="view">
@@ -80,17 +79,23 @@
     <div id="chatrooms">
         <div class="rooms" id="room1">
             <div>
-                <p class="user">kristoffer_frejd</p> <p class="messages"> lorem20 Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, quo.</p><p class="time-stamp">TIMESTAMP</p>
+                <p class="user">kristoffer_frejd</p>
+                <p class="messages"> lorem20 Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, quo.</p>
+                <p class="time-stamp">TIMESTAMP</p>
             </div>
             <div>
-                    <p class="user">BOBNICK</p> <p class="messages"> lorem20 Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, quo.</p><p class="time-stamp">TIMESTAMP</p>
+                <p class="user">BOBNICK</p>
+                <p class="messages"> lorem20 Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, quo.</p>
+                <p class="time-stamp">TIMESTAMP</p>
             </div>
         </div>
         <div class="rooms" id="room2">
-            <p class="user"></p><p class="messages"></p>
+            <p class="user"></p>
+            <p class="messages"></p>
         </div>
         <div class="rooms" id="room3">
-            <p class="user"></p><p class="messages"></p>
+            <p class="user"></p>
+            <p class="messages"></p>
         </div>
     </div>
     <div id="input-box">
@@ -106,8 +111,16 @@
             <li>Johanik</li>
         </ul>
     </div>
-
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/registeruser.js"></script>
+    <script src="js/changeRoom.js"></script>
 </body>
 
 </html>
