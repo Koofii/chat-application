@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GopChat</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="../css/registeruser.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <div id="reg-view" class="view">
+            <div class="regform sign-in">
+                <h3>Sign in!</h3>
+                <input  type="text" id="email-signin" name="email" placeholder="Email"/>
+
+                <input type="password" id="password-signin" name="password" placeholder="Password"/>
+
+            </div>
+            <div id="signin-signout">
+                <br>
+                <button id="sign-in-button" name="signin">Sign In</button>
+            </div>
+            <div id="become-gopnik">
+                <p>Want to become real Gopnik? <span>Click here!</span></p>
+            </div>
+            <div class="regform sign-up">
+                <p>Enter an email and password below and either sign in to an existing account or sign up</p>
+
+                <!-- This form is currently used both to register and log in -->
+                <input type="text" id="fname" name="fname" placeholder="First name"/>
+
+                <input type="text" id="lname" name="lname" placeholder="Last name"/>
+
+                <input type="text" id="username" name="username" placeholder="Username"/>
+
+                <input  type="text" id="email" name="email" placeholder="Email"/>
+
+                <input type="password" id="password" name="password" placeholder="Password"/>
+
+
+                <button id="sign-up-button" name="signup">Sign Up</button>
+
+                <!-- Container where we'll display the user details - usefull for checking info -->
+                <div class="user-details-container">
+                    Firebase sign-in status: <span id="sign-in-status">Unknown</span>
+                    <div>Firebase auth <code>currentUser</code> object value:</div>
+                    <pre><code id="account-details">null</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/registeruser.js"></script>
+</body>
+</html>
