@@ -31,9 +31,7 @@ nav{
     height: 100vh;
     position: fixed;
 }
-ul{
-    
-}
+
 li{
     text-align: center;
     list-style: none;
@@ -42,6 +40,15 @@ li{
     margin-top: 40px;
     cursor: pointer;
 }
+
+#list-of-users ul li {
+    cursor: default;
+}
+
+#list-of-users h2 {
+    cursor: default;
+}
+
 li:first-child{
     margin-top: 45px;
 }
@@ -147,6 +154,8 @@ li:first-child{
 }
 .messages{
     width: 70%;
+    padding: 3px 0 3px 0;
+    margin: 3px 3px 3px 0;
     font-family: 'Roboto Condensed', sans-serif;
 }
 .time-stamp{

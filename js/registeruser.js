@@ -1,5 +1,4 @@
 /* global firebase */
-
 const config = {
     apiKey: "AIzaSyAl4qIrAr0pjNYnvPQLp3ubQ1jRipSmYTw",
     authDomain: "gopnik-chat.firebaseapp.com",
