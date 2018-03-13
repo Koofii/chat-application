@@ -3,6 +3,7 @@ const state = {
     currentRoom: "room1",
     msg: $("#msg"),
     send: $("#send"),
+    chatrooms: document.getElementById("chatrooms")
 };
 $("nav ul li").on("click", changeRoom);
 
@@ -21,22 +22,23 @@ function changeRoom() {
 }
 
 function msgHandler(snapshot) {
-    $(`#${state.currentRoom}`).html(`<div>
+    $(`#${state.currentRoom}`).append(`<div>
         <p class="user">${snapshot.val().user}<p>
         <p class="messages">${snapshot.val().message}
         <p class="time-stamp">${snapshot.val().time}</p>
     </div>`);
+    state.chatrooms.scrollTop = state.chatrooms.scrollHeight;
 }
 
 function startChat(state) {
     db.ref(`/chat/${state.currentRoom}`).on("child_added", msgHandler);
 }
 
-state.send.on("click", function(e) {
+state.send.on("click", function (e) {
     e.preventDefault();
     let user = firebase.auth().currentUser;
     let ref = db.ref(`/users/${user.uid}`);
-    ref.on("value", function(snapshot) {
+    ref.on("value", function (snapshot) {
         let username = snapshot.val().username;
         db.ref(`/chat/${state.currentRoom}`).push({
             user: username,
@@ -45,17 +47,11 @@ state.send.on("click", function(e) {
         });
         state.msg.val("");
     });
-    $("#chatrooms").scrollTop = $("#chatrooms").scrollHeight;
 });
 
-state.msg.on("keydown", function(e) {
-    if ((e.keyCode || e.which ) === 13) {
+state.msg.on("keydown", function (e) {
+    if ((e.keyCode || e.which) === 13) {
         $("#send").trigger("click");
     }
 });
-window.setInterval(function() {
-    let elem = document.getElementById("chatrooms");
-    elem.scrollTop = elem.scrollHeight;
-}, 700);
-
 startChat(state);
