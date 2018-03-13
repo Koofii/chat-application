@@ -181,6 +181,7 @@ function initApp() {
     $("#sign-up-button").click(handleSignUp);
     $("#sign-out-button").click(toggleSignIn);
 }
+
 window.onload = function () {
     initApp();
 };
