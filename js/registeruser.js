@@ -9,8 +9,13 @@ const config = {
     messagingSenderId: "1075818501637"
 };
 firebase.initializeApp(config);
-
-
+$("#regform-sign-up").hide();
+$("#become-gopnik p span").click(function(){
+    $("#regform-sign-up").show();
+    $("#regform-sign-in").hide();
+    $("#become-gopnik").hide();
+    $("#signin-signout").hide();
+});
 // Vars for Firebase
 let db = firebase.database();
 // let auth = firebase.auth();
@@ -135,13 +140,15 @@ function initApp() {
     // [START authstatelistener]
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-
             // User is signed in.
-            // const displayName = user.displayName;
-            // const email = user.email;
-            // const uid = user.uid;
-            // const providerData = user.providerData;
-            // [START_EXCLUDE]
+            $("#sign-in-button").hide();
+            $("#rooms").show();
+            $("#regform-sign-in").hide();
+            $("#become-gopnik").hide();
+            $("#signin-signout").show();
+            $("#chatrooms").show();
+            $("#list-of-users").show();
+            $("#input-box").show();
             $("#sign-in-status").text("Signed in");
             $("#sign-in-button").text("Sign out");
             $("#account-details").text(JSON.stringify(user, null, "  "));
@@ -150,6 +157,15 @@ function initApp() {
         } else {
             // User is signed out.
             // [START_EXCLUDE]
+            $("#sign-in-button").show();
+            $("#sign-out-button").hide();
+            $("#regform-sign-in").show();
+            $("#reg-view").show();
+            $("#chatrooms").hide();
+            $("#input-box").hide();
+            $("#list-of-users").hide();
+            $("#rooms").hide();
+            $("#become-gopnik").show();
             $("#sign-in-status").text("Signed out");
             $("#sign-in-button").text("Sign in");
             $("#account-details").text("null");
@@ -163,6 +179,7 @@ function initApp() {
 
     $("#sign-in-button").click(toggleSignIn);
     $("#sign-up-button").click(handleSignUp);
+    $("#sign-out-button").click(toggleSignIn);
 }
 window.onload = function () {
     initApp();

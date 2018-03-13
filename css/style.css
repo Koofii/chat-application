@@ -39,9 +39,10 @@ li{
     font-size: 30px;
     display: block;
     margin-top: 40px;
+    cursor: pointer;
 }
 li:first-child{
-    margin-top: 80px;
+    margin-top: 45px;
 }
 #logo img{
     width: 100%;
@@ -53,6 +54,7 @@ li:first-child{
 #become-gopnik p{
     margin: 0 auto;
     text-align: center;
+    margin-left: 18px;
 }
 #become-gopnik p span{
     text-decoration: underline;
@@ -64,6 +66,7 @@ li:first-child{
 }
 .regform h3{
     font-size: 30px;
+    text-align: center;
 }
 .regform input{
     width: 100%;
@@ -73,7 +76,8 @@ li:first-child{
     color: rgb(83, 78, 78);
 }
 .regform p{
-    margin: 10px;
+    margin-left: 18px;
+    margin-bottom: 10px;
     text-align: center;
     font-size: 20px;
 }
@@ -86,6 +90,19 @@ li:first-child{
     border: none;
     padding: 8px 20px 8px 20px;
     cursor: pointer;
+    margin-left: 19px;
+}
+#div-button{
+    width: 100%;
+    text-align: center;
+    margin-top: 385px;
+}
+#sign-out-button{
+    background-color: rgb(83, 78, 78);
+    border: none;
+    padding: 8px 20px 8px 20px;
+    cursor: pointer;
+    text-align: center;
 }
 #sign-up-button{
     background-color: rgb(83, 78, 78);
@@ -144,7 +161,7 @@ li:first-child{
 }
 #input-box{
     grid-column: 2/3;
-    grid-row: 3/4;
+    grid-row: 4/5;
     width: 90%;
 }
 #input-box input:first-child{

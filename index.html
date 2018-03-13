@@ -24,14 +24,17 @@
             <img src="images/logo-gop.png" alt="">
         </div>
         <!-- show when logged in -->
-        <ul>
+        <ul id="rooms">
             <li data-value="room1">Room 1</li>
             <li data-value="room2">Room 2</li>
             <li data-value="room3">Room 3</li>
         </ul>
+        <div id="div-button">
+            <button id="sign-out-button">Sign out</button>
+        </div>
     </nav>
     <div id="reg-view" class="view">
-        <div class="regform sign-in">
+        <div id="regform-sign-in" class="regform sign-in">
             <h3>Sign in!</h3>
             <input type="text" id="email-signin" name="email" placeholder="Email" />
 
@@ -46,10 +49,10 @@
                 <span>Click here!</span>
             </p>
         </div>
-        <div class="regform sign-up">
+        <div id="regform-sign-up" class="regform sign-up">
             <p>Fill your details below and become real GOPPP!!!</p>
 
-            This form is currently used both to register and log in
+            
             <input type="text" id="fname" name="fname" placeholder="First name" />
 
             <input type="text" id="lname" name="lname" placeholder="Last name" />
@@ -66,15 +69,13 @@
             <button disabled id="verify-email" name="verify-email" style="display: none;">Send Email Verification</button>
 
             <button id="password-reset" name="verify-email" style="display: none;">Send Password Reset Email</button>
-<!-- 
-            Container where we'll display the user details - usefull for checking info
-            <div class="user-details-container">
-                Firebase sign-in status:
-                <span id="sign-in-status">Unknown</span>
-                <div>Firebase auth
-                    <code>currentUser</code> object value:</div>
-                <pre><code id="account-details">null</code></pre>
-            </div> -->
+
+            <!-- Container where we'll display the user details - usefull for checking info -->
+            <!-- <div class="user-details-container">
+                    Firebase sign-in status: <span id="sign-in-status">Unknown</span>
+                    <div>Firebase auth <code>currentUser</code> object value:</div>
+                    <pre><code id="account-details">null</code></pre>
+                </div> -->
         </div>
     </div>
     <!-- show when logged in -->
