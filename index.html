@@ -66,13 +66,15 @@
             <button disabled id="verify-email" name="verify-email" style="display: none;">Send Email Verification</button>
 
             <button id="password-reset" name="verify-email" style="display: none;">Send Password Reset Email</button>
-
+<!-- 
             Container where we'll display the user details - usefull for checking info
             <div class="user-details-container">
-                    Firebase sign-in status: <span id="sign-in-status">Unknown</span>
-                    <div>Firebase auth <code>currentUser</code> object value:</div>
-                    <pre><code id="account-details">null</code></pre>
-                </div>
+                Firebase sign-in status:
+                <span id="sign-in-status">Unknown</span>
+                <div>Firebase auth
+                    <code>currentUser</code> object value:</div>
+                <pre><code id="account-details">null</code></pre>
+            </div> -->
         </div>
     </div>
     <!-- show when logged in -->
@@ -85,8 +87,8 @@
         </div>
     </div>
     <div id="input-box">
-        <input type="text" placeholder="Message here...">
-        <input type="submit" value="Send goptext">
+        <input id="msg" type="text" placeholder="Message here...">
+        <input id="send" type="submit" value="Send goptext">
     </div>
     <!-- Show when logged in -->
     <div id="list-of-users">
@@ -97,10 +99,8 @@
             <li>Johanik</li>
         </ul>
     </div>
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
