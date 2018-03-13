@@ -57,8 +57,10 @@ state.send.on("click", function(e) {
             message: state.msg.val(),
             time: Date.now()
         });
+
+        state.msg.val("");
     });
-    state.msg.val("");
+    
 });
 
 state.msg.on("keydown", function(e) {
