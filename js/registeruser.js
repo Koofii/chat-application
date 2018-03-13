@@ -1,3 +1,5 @@
+/* global firebase */
+
 const config = {
     apiKey: "AIzaSyAl4qIrAr0pjNYnvPQLp3ubQ1jRipSmYTw",
     authDomain: "gopnik-chat.firebaseapp.com",
@@ -11,33 +13,13 @@ firebase.initializeApp(config);
 
 // Vars for Firebase
 let db = firebase.database();
-let auth = firebase.auth();
-let provider = new firebase.auth.GithubAuthProvider();
-let userId;
+// let auth = firebase.auth();
 
-function removeUserFromOnlineList(user) {
+function removeUserFromOnlineList() {
     // const currentUser = auth.currentUser;
     // db.ref("/online/").child(`${currentUser.uid}`).remove();
     return null;
 }
-
-
-firebase.auth().onAuthStateChanged(function (currentUser) {
-    if (currentUser) {
-        // $(".sign-up").hide();
-        // $(".sign-in").hide();
-        //Show chatrooms + navigation
-
-    } else {
-        // $(".sign-up").hide();
-        // $(".sign-in").show();
-    }
-});
-
-// legacy
-// db.ref("/users").on("child_changed", function (snapshot) {
-//     console.log(snapshot.val());
-// });
 
 // This is used to log in and verify details
 function toggleSignIn() {
@@ -50,14 +32,14 @@ function toggleSignIn() {
         removeUserFromOnlineList();
         firebase.auth().signOut();
     } else {
-        var email = $('#email-signin').val()
-        var password = $('#password-signin').val();
+        var email = $("#email-signin").val()
+        var password = $("#password-signin").val();
         if (email.length < 4) {
-            alert('Please enter an email address.');
+            alert("Please enter an email address.");
             return;
         }
         if (password.length < 4) {
-            alert('Please enter a password.');
+            alert("Please enter a password.");
             return;
         }
         // Sign in with email and pass.
@@ -76,8 +58,8 @@ function toggleSignIn() {
                 var errorCode = error.code;
                 var errorMessage = error.message;
                 // [START_EXCLUDE]
-                if (errorCode === 'auth/wrong-password') {
-                    alert('Wrong password.');
+                if (errorCode === "auth/wrong-password") {
+                    alert("Wrong password.");
                 } else {
                     alert(errorMessage);
                 }
@@ -94,17 +76,17 @@ function toggleSignIn() {
  * Handles the sign up button press.
  */
 function handleSignUp() {
-    var email = $('#email').val();
-    var password = $('#password').val();
-    var username = $('#username').val();
-    var fName = $('#fname').val();
-    var lName = $('#lname').val();
+    var email = $("#email").val();
+    var password = $("#password").val();
+    var username = $("#username").val();
+    var fName = $("#fname").val();
+    var lName = $("#lname").val();
     if (email.length < 4) {
-        alert('Please enter an email address.');
+        alert("Please enter an email address.");
         return;
     }
     if (password.length < 4) {
-        alert('Please enter a password.');
+        alert("Please enter a password.");
         return;
     }
     // Sign in with email and pass.
@@ -114,8 +96,8 @@ function handleSignUp() {
         var errorCode = error.code;
         var errorMessage = error.message;
         // [START_EXCLUDE]
-        if (errorCode == 'auth/weak-password') {
-            alert('The password is too weak.');
+        if (errorCode == "auth/weak-password") {
+            alert("The password is too weak.");
         } else {
             alert(errorMessage);
         }
@@ -125,9 +107,9 @@ function handleSignUp() {
 
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            // If user state changes and 'user' exists, check Firebase Database for user
+            // If user state changes and "user" exists, check Firebase Database for user
             const userReference = db.ref(`/users/${user.uid}`);
-            userReference.once('value', snapshot => {
+            userReference.once("value", snapshot => {
                 if (!snapshot.val()) {
                     // User does not exist, create user entry
                     userReference.set({
@@ -135,7 +117,6 @@ function handleSignUp() {
                         username: username,
                         firstname: fName,
                         lastname: lName,
-                        //online: true
                     });
                 }
             });
@@ -156,22 +137,22 @@ function initApp() {
         if (user) {
 
             // User is signed in.
-            const displayName = user.displayName;
-            const email = user.email;
-            const uid = user.uid;
-            const providerData = user.providerData;
+            // const displayName = user.displayName;
+            // const email = user.email;
+            // const uid = user.uid;
+            // const providerData = user.providerData;
             // [START_EXCLUDE]
-            $('#sign-in-status').text("Signed in");
-            $('#sign-in-button').text("Sign out");
-            $('#account-details').text(JSON.stringify(user, null, '  '));
+            $("#sign-in-status").text("Signed in");
+            $("#sign-in-button").text("Sign out");
+            $("#account-details").text(JSON.stringify(user, null, "  "));
 
             // [END_EXCLUDE]
         } else {
             // User is signed out.
             // [START_EXCLUDE]
-            $('#sign-in-status').text("Signed out");
-            $('#sign-in-button').text("Sign in");
-            $('#account-details').text("null");
+            $("#sign-in-status").text("Signed out");
+            $("#sign-in-button").text("Sign in");
+            $("#account-details").text("null");
             // [END_EXCLUDE]
         }
         // [START_EXCLUDE silent]
