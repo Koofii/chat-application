@@ -28,8 +28,11 @@ nav{
     grid-column: 1/2;
     border-right: 2px solid #707070;
     grid-row: 1/grid-row-end;
-    height: 100vh;
+    height: 100%;
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 ul{
     
@@ -44,6 +47,11 @@ li{
 }
 li:first-child{
     margin-top: 45px;
+}
+#div-button{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 100px;
 }
 #logo img{
     width: 100%;
@@ -93,11 +101,7 @@ li:first-child{
     cursor: pointer;
     margin-left: 19px;
 }
-#div-button{
-    width: 100%;
-    text-align: center;
-    margin-top: 385px;
-}
+
 #sign-out-button{
     background-color: rgb(83, 78, 78);
     border: none;
@@ -179,7 +183,7 @@ li:first-child{
     width: 80%;
     height: 30px;
     border: none;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 #input-box input:last-child{
     width: 20%;
