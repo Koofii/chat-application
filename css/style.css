@@ -171,6 +171,7 @@ li:first-child{
     width: 80%;
     height: 30px;
     border: none;
+    margin-bottom: 100px;
 }
 #input-box input:last-child{
     width: 20%;
