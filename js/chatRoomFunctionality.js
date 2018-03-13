@@ -59,7 +59,6 @@ state.send.on("click", function(e) {
         });
         state.msg.val("");
     });
-    $("#chatrooms").scrollTop = $("#chatrooms").scrollHeight;
 });
 
 state.msg.on("keydown", function(e) {
@@ -68,9 +67,7 @@ state.msg.on("keydown", function(e) {
         $("#send").trigger("click");
     }
 });
-window.setInterval(function() {
-    let elem = document.getElementById('chatrooms');
-    elem.scrollTop = elem.scrollHeight;
-}, 700);
+
+
 
 startChat(state);
