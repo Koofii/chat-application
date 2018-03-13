@@ -43,7 +43,7 @@ state.send.on("click", function (e) {
         
         db.ref(`/chat/${state.currentRoom}`).push({
             user: username,
-            message: state.msg.val().replace(/</g, "") || "I enjoy sending blank lines.",
+            message: state.msg.val().replace(/</g, "") || "I am poor gopnik I cannot afford send real text",
             //ninja lvl: 1,000
             time: time.toISOString().split("T").join(" ").slice(0, 19)
         });
