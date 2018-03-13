@@ -170,6 +170,7 @@ li:first-child{
 }
 .time-stamp{
     padding: 0;
+    margin-right: 15px;
     text-align: right;
     width:auto;
     font-size: 12px;
