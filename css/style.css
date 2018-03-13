@@ -133,12 +133,17 @@ li:first-child{
 .rooms div{
     width: 100%;
     display: flex;
-    margin: 10px 10px 10px 0px;
+    
 }
 
 .user{
-    width: 15%;
+    padding: 3px;
+    width: 11%;
     font-family: 'Roboto Condensed', sans-serif;
+    margin: 3px 3px 3px 0px;
+}
+.user:after{
+    content: ":"
 }
 .messages{
     width: 70%;
