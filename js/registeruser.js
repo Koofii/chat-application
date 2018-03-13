@@ -141,6 +141,7 @@ function initApp() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
+            $("#sign-out-button").show();
             $("#sign-in-button").hide();
             $("#rooms").show();
             $("#regform-sign-in").hide();
@@ -181,6 +182,7 @@ function initApp() {
     $("#sign-up-button").click(handleSignUp);
     $("#sign-out-button").click(toggleSignIn);
 }
+
 window.onload = function () {
     initApp();
 };

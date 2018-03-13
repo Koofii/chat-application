@@ -21,6 +21,7 @@ body{
 header{
     grid-column: 2/4;
     font-size: 50px;
+    margin-bottom: -25px;
 }
 nav{
     width: 17%;
@@ -115,6 +116,8 @@ li:first-child{
 }
 
 #chatrooms{
+    max-height: 60vh;
+    overflow-y: auto;
     grid-column: 2/3;
     background-color: #504d4d;
     width: 90%;
@@ -171,6 +174,7 @@ li:first-child{
     width: 80%;
     height: 30px;
     border: none;
+    margin-bottom: 100px;
 }
 #input-box input:last-child{
     width: 20%;
