@@ -171,14 +171,8 @@ li:first-child{
     content: ":"
 }
 .messages{
-<<<<<<< HEAD
-    width: 70%;
-    padding: 3px 0 3px 0;
-    margin: 3px 3px 3px 0;
-=======
     padding: 0;
     width: 80%;
->>>>>>> 538d4c13216d8bb9b87c0c7a60d97d9081500d05
     font-family: 'Roboto Condensed', sans-serif;
 }
 .time-stamp{
