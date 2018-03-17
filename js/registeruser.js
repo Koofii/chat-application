@@ -132,50 +132,27 @@ function handleSignUp() {
     // [END createwithemail]
 }
 
-/**
- * initApp handles setting up UI event listeners and registering Firebase auth listeners:
- *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
- *    out, and that is where we update the UI.
- */
 function initApp() {
     // Listening for auth state changes.
-    // [START authstatelistener]
+    
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            // User is signed in.
-            // JESUS FUCKING CHRIST
-            $("#sign-out-button").show();
-            $("#sign-in-button").hide();
-            $("#rooms").show();
-            $("#regform-sign-in").hide();
-            $("#become-gopnik").hide();
-            $("#signin-signout").show();
-            $("#chatrooms").show();
-            $("#list-of-users").show();
-            $("#input-box").show();
-            $("#sign-in-status").text("Signed in");
-            $("#sign-in-button").text("Sign out");
-            $("#account-details").text(JSON.stringify(user, null, "  "));
-            $("#sign-in-view").hide();
-            $("#reg-form").hide();
-            $("#chatrooms").fadeIn();
-            $("#input-box").fadeIn();
             $("#rooms").fadeIn();
-            $("#div-button").fadeIn();
+            $("#chatrooms").fadeIn();
             $("#list-of-users").fadeIn();
-            // [END_EXCLUDE]
+            $("#input-box").fadeIn();
+            $("#div-button").fadeIn();
+            $("#sign-in-view").hide();
+            
         } else {
-            // User is signed out.
-            $("#sign-in-view").fadeIn();
-            $("#chatrooms").hide();
-            $("#input-box").hide();
             $("#rooms").hide();
-            $("#div-button").hide();
+            $("#chatrooms").hide();
             $("#list-of-users").hide();
+            $("#input-box").hide();
+            $("#div-button").hide();
+            $("#sign-in-view").show();
+           
         }
-        // [START_EXCLUDE silent]
-        $("#sign-in-button").prop("disabled, false");
-        // [END_EXCLUDE]
     });
     // [END authstatelistener]
     $("#sign-in-button").click(toggleSignIn);
