@@ -25,6 +25,7 @@ let db = firebase.database();
 function removeUserFromOnlineList() {
     const currentUser = firebase.auth().currentUser;
     db.ref("/online/").child(`${currentUser.uid}`).remove();
+    $("#user").remove();
     return null;
 }
 
