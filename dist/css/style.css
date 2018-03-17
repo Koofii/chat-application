@@ -1,0 +1,228 @@
+@font-face{
+    font-family: 'gopnik';
+    src: url("../fonts/kremlin.ttf");
+}
+
+*{
+    font-family: 'gopnik';
+    margin: 0 auto;
+    padding: 0;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: #3D3D3D;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 17% 63% 20%;
+}
+header{
+    grid-column: 2/4;
+    font-size: 50px;
+    margin-bottom: -25px;
+}
+nav{
+    width: 17%;
+    grid-column: 1/2;
+    border-right: 2px solid #707070;
+    grid-row: 1/grid-row-end;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+li{
+    text-align: center;
+    list-style: none;
+    font-size: 30px;
+    display: block;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+#list-of-users ul li {
+    cursor: default;
+}
+
+#list-of-users h2 {
+    cursor: default;
+}
+
+li:first-child{
+    margin-top: 45px;
+}
+#div-button{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 100px;
+}
+#logo img{
+    width: 100%;
+    margin-top: 50px;
+}
+#sign-in-view{
+    grid-column: 2/4;
+}
+#reg-form{
+    grid-column: 2/4;
+    max-width: 403px;
+}
+#become-gopnik p{
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 18px;
+}
+#become-gopnik p span{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.regform{
+    display: flex;
+    flex-direction: column;
+}
+.regform h3{
+    font-size: 30px;
+    text-align: center;
+}
+.regform input{
+    width: 100%;
+    margin-top: 5px;
+    padding: 7px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(8, 2, 2);
+}
+.regform div{
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+#cancel-reg{
+    text-align: center;
+    margin-top: 25px;
+}
+#cancel-reg p{
+    cursor: pointer;
+    text-decoration: underline;
+}
+#signin-signout{
+    text-align: center;
+    padding: 10px;
+}
+#signin-signout button{
+    background-color: rgb(83, 78, 78);
+    border: none;
+    padding: 8px 20px 8px 20px;
+    cursor: pointer;
+    margin-left: 19px;
+}
+
+#sign-out-button{
+    background-color: rgb(83, 78, 78);
+    border: none;
+    padding: 8px 20px 8px 20px;
+    cursor: pointer;
+    text-align: center;
+}
+#sign-up-button{
+    background-color: rgb(83, 78, 78);
+    border: none;
+    padding: 8px 20px 8px 20px;
+    cursor: pointer;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 25px;
+    
+}
+
+#chatrooms{
+    max-height: 60vh;
+    overflow-y: auto;
+    grid-column: 2/3;
+    background-color: #504d4d;
+    width: 90%;
+    color: white;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.rooms{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.rooms div{
+    width: 100%;
+    display: flex;
+    margin-top: 4px;
+    font-size: 15px;
+    margin: 3px 0px 3px 0px;
+}
+
+.user{
+    padding-left: 10px;
+    width: 8%;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.user:after{
+    content: ":"
+}
+.messages{
+    padding: 0;
+    width: 80%;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.time-stamp{
+    padding: 0;
+    margin-right: 15px;
+    text-align: right;
+    width:auto;
+    font-size: 12px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#list-of-users{
+    grid-column: 3/4;
+    background-color: #504d4d;
+    width: 90%;
+    height: 60vh;
+    text-align: center;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+#list-of-users h2{
+    margin-top: 40px;
+}#list-of-users ul li{
+    cursor: inherit;
+}
+#input-box{
+    grid-column: 2/3;
+    grid-row: 4/5;
+    width: 90%;
+}
+#input-box input:first-child{
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(83, 78, 78);
+    width: 80%;
+    height: 30px;
+    border: none;
+    margin-bottom: 50px;
+}
+#input-box input:last-child{
+    width: 20%;
+    margin: 0 auto;
+    border: none;
+    float: right;
+    background-color: #707070;
+    cursor: pointer;
+    float: right;
+    height: 30px;
+}
+
+.invalid{
+    border: 2px solid red;
+}
