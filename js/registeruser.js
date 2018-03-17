@@ -10,11 +10,11 @@ const config = {
 firebase.initializeApp(config);
 $("#reg-form").hide();
 
-$("#become-gopnik p span").click(function(){
+$("#become-gopnik p span").click(function () {
     $("#sign-in-view").hide();
     $("#reg-form").fadeIn();
 });
-$("#cancel-reg p").click(function(){
+$("#cancel-reg p").click(function () {
     $("#sign-in-view").fadeIn();
     $("#reg-form").hide();
 });
@@ -134,7 +134,7 @@ function handleSignUp() {
 
 function initApp() {
     // Listening for auth state changes.
-    
+
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             $("#rooms").fadeIn();
@@ -143,7 +143,15 @@ function initApp() {
             $("#input-box").fadeIn();
             $("#div-button").fadeIn();
             $("#sign-in-view").hide();
-            
+
+            db.ref(`/users/${user.uid}`).on("value", snapshot => {
+                const username = snapshot.val().username;
+                $("body").append(`<div id="user" style="position: absolute; top: 50px; left: 80%;">${username}</div>`)
+            });
+
+
+
+
         } else {
             $("#rooms").hide();
             $("#chatrooms").hide();
@@ -151,7 +159,7 @@ function initApp() {
             $("#input-box").hide();
             $("#div-button").hide();
             $("#sign-in-view").show();
-           
+
         }
     });
     // [END authstatelistener]
