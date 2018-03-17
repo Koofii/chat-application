@@ -1,4 +1,4 @@
-/* global db */
+/* global db, firebase */
 const state = {
     currentRoom: "room1",
     msg: $("#msg"),
@@ -29,7 +29,7 @@ function msgHandler(snapshot) {
     state.chatrooms.scrollTop = state.chatrooms.scrollHeight;
 }
 
-function startChat(state) {
+function startChat(state) { //eslint-disable-line
     db.ref(`/chat/${state.currentRoom}`).on("child_added", msgHandler);
 }
 

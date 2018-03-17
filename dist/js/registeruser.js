@@ -128,6 +128,11 @@ function handleSignUp() {
                     });
                 }
             });
+            const currentUser = firebase.auth().currentUser;
+
+            db.ref(`/users/${currentUser.uid}`).once("value", snapshot => {
+                db.ref(`/online/${currentUser.uid}`).set({ online: snapshot.val().username });
+            });
         }
     });
     // [END createwithemail]
