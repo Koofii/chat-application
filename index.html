@@ -24,14 +24,17 @@
             <img src="images/logo-gop.png" alt="">
         </div>
         <!-- show when logged in -->
-        <ul>
+        <ul id="rooms">
             <li data-value="room1">Room 1</li>
             <li data-value="room2">Room 2</li>
             <li data-value="room3">Room 3</li>
         </ul>
+        <div id="div-button">
+            <button id="sign-out-button">Sign out</button>
+        </div>
     </nav>
-    <!-- <div id="reg-view" class="view">
-        <div class="regform sign-in">
+    <div id="sign-in-view">
+        <div id="regform-sign-in" class="regform sign-in">
             <h3>Sign in!</h3>
             <input type="text" id="email-signin" name="email" placeholder="Email" />
 
@@ -46,10 +49,12 @@
                 <span>Click here!</span>
             </p>
         </div>
-        <div class="regform sign-up">
-            <p>Fill your details below and become real GOPPP!!!</p>
-
-            This form is currently used both to register and log in
+    </div>
+    <div id="reg-form" class="view">
+        <div id="regform-sign-up" class="regform sign-up">
+            <div>
+                <p>Fill your details below and become real GOPPP!!</p>
+            </div>
             <input type="text" id="fname" name="fname" placeholder="First name" />
 
             <input type="text" id="lname" name="lname" placeholder="Last name" />
@@ -60,47 +65,31 @@
 
             <input type="password" id="password" name="password" placeholder="Password" />
 
-
             <button id="sign-up-button" name="signup">Sign Up</button>
 
-            <button disabled id="verify-email" name="verify-email" style="display: none;">Send Email Verification</button>
-
-            <button id="password-reset" name="verify-email" style="display: none;">Send Password Reset Email</button>
-
-            Container where we'll display the user details - usefull for checking info
-            <div class="user-details-container">
+            <div id="cancel-reg">
+                <p>Go back/Cancel</p>
+            </div>
+            <!-- Container where we'll display the user details - usefull for checking info -->
+            <!-- <div class="user-details-container">
                     Firebase sign-in status: <span id="sign-in-status">Unknown</span>
                     <div>Firebase auth <code>currentUser</code> object value:</div>
                     <pre><code id="account-details">null</code></pre>
-                </div>
+                </div> -->
         </div>
-    </div> -->
+    </div>
     <!-- show when logged in -->
     <div id="chatrooms">
         <div class="rooms" id="room1">
-            <div>
-                <p class="user">kristoffer_frejd</p>
-                <p class="messages"> lorem20 Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, quo.</p>
-                <p class="time-stamp">TIMESTAMP</p>
-            </div>
-            <div>
-                <p class="user">BOBNICK</p>
-                <p class="messages"> lorem20 Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, quo.</p>
-                <p class="time-stamp">TIMESTAMP</p>
-            </div>
         </div>
         <div class="rooms" id="room2">
-            <p class="user"></p>
-            <p class="messages"></p>
         </div>
         <div class="rooms" id="room3">
-            <p class="user"></p>
-            <p class="messages"></p>
         </div>
     </div>
     <div id="input-box">
-        <input type="text" placeholder="Message here...">
-        <input type="submit" value="Send goptext">
+        <input id="msg" type="text" placeholder="Message here...">
+        <input id="send" type="submit" value="Send goptext">
     </div>
     <!-- Show when logged in -->
     <div id="list-of-users">
@@ -111,16 +100,14 @@
             <li>Johanik</li>
         </ul>
     </div>
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
     <script src="js/index.js"></script>
     <script src="js/registeruser.js"></script>
-    <script src="js/changeRoom.js"></script>
+    <script src="js/chatRoomFunctionality.js"></script>
 </body>
 
 </html>
