@@ -23,7 +23,7 @@ let db = firebase.database();
 // let auth = firebase.auth();
 
 function removeUserFromOnlineList() {
-    const currentUser = auth.currentUser;
+    const currentUser = firebase.auth().currentUser;
     db.ref("/online/").child(`${currentUser.uid}`).remove();
     return null;
 }
