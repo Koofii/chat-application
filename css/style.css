@@ -222,3 +222,7 @@ li:first-child{
     float: right;
     height: 30px;
 }
+
+.invalid{
+    border: 2px solid red;
+}

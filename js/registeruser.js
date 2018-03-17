@@ -31,25 +31,22 @@ function removeUserFromOnlineList() {
 // This is used to log in and verify details
 function toggleSignIn() {
     if (firebase.auth().currentUser) {
-        // const currentUser = firebase.auth().currentUser;
-        // const userReference = db.ref(`/users/${currentUser.uid}`);
-        // userReference.update({
-        //     online: false
-        // });
+
         removeUserFromOnlineList();
         firebase.auth().signOut();
     } else {
-        var email = $("#email-signin").val()
-        var password = $("#password-signin").val();
-        if (email.length < 4) {
-            alert("Please enter an email address.");
+        let email = $("#email-signin").val()
+        let password = $("#password-signin").val();
+        if (email.indexOf("@") === -1) {
+            $("#email-signin").prop('class', 'invalid');
             return;
         }
         if (password.length < 4) {
+            $("#password-signin").prop('class', 'invalid');
             alert("Please enter a password.");
             return;
         }
-        // Sign in with email and pass.
+
         // [START authwithemail]
         firebase.auth()
             .signInWithEmailAndPassword(email, password)
@@ -88,6 +85,8 @@ function handleSignUp() {
     var username = $("#username").val();
     var fName = $("#fname").val();
     var lName = $("#lname").val();
+
+    //sign up validation email
     if (email.length < 4) {
         alert("Please enter an email address.");
         return;
@@ -103,6 +102,7 @@ function handleSignUp() {
         var errorCode = error.code;
         var errorMessage = error.message;
         // [START_EXCLUDE]
+        //validation password sign up
         if (errorCode == "auth/weak-password") {
             alert("The password is too weak.");
         } else {
