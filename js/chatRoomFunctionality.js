@@ -5,7 +5,6 @@ const state = {
     send: $("#send"),
     chatrooms: document.getElementById("chatrooms")
 };
-$("nav ul li").on("click", changeRoom);
 
 function changeRoom() {
     const room = $(this).attr("data-value");
@@ -23,7 +22,7 @@ function changeRoom() {
 
 function msgHandler(snapshot) {
     $(`#${state.currentRoom}`).append(`<div>
-        <p class="user">${snapshot.val().user}<p>
+        <p class="user">${snapshot.val().user}</p>
         <p class="messages">${snapshot.val().message}
         <p class="time-stamp">${snapshot.val().time}</p>
     </div>`);
@@ -40,10 +39,13 @@ state.send.on("click", function (e) {
     let ref = db.ref(`/users/${user.uid}`);
     ref.on("value", function (snapshot) {
         let username = snapshot.val().username;
+        let time = new Date();
+        
         db.ref(`/chat/${state.currentRoom}`).push({
             user: username,
-            message: state.msg.val().replace(/</g, ""),
-            time: Date.now()
+            message: state.msg.val().replace(/</g, "") || "I am poor gopnik I cannot afford send real text",
+            //ninja lvl: 1,000
+            time: time.toISOString().split("T").join(" ").slice(0, 19)
         });
         state.msg.val("");
     });
@@ -54,4 +56,5 @@ state.msg.on("keydown", function (e) {
         $("#send").trigger("click");
     }
 });
+$("nav ul li").on("click", changeRoom);
 startChat(state);

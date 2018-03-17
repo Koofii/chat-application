@@ -34,9 +34,7 @@ nav{
     flex-direction: column;
     justify-content: space-between;
 }
-ul{
-    
-}
+
 li{
     text-align: center;
     list-style: none;
@@ -45,6 +43,15 @@ li{
     margin-top: 40px;
     cursor: pointer;
 }
+
+#list-of-users ul li {
+    cursor: default;
+}
+
+#list-of-users h2 {
+    cursor: default;
+}
+
 li:first-child{
     margin-top: 45px;
 }
@@ -164,8 +171,14 @@ li:first-child{
     content: ":"
 }
 .messages{
+<<<<<<< HEAD
+    width: 70%;
+    padding: 3px 0 3px 0;
+    margin: 3px 3px 3px 0;
+=======
     padding: 0;
     width: 80%;
+>>>>>>> 538d4c13216d8bb9b87c0c7a60d97d9081500d05
     font-family: 'Roboto Condensed', sans-serif;
 }
 .time-stamp{
