@@ -1,4 +1,4 @@
-/* global firebase, state, startChat */
+/* global firebase, state, startChat, updateOnline */
 const config = {
     apiKey: "AIzaSyAl4qIrAr0pjNYnvPQLp3ubQ1jRipSmYTw",
     authDomain: "gopnik-chat.firebaseapp.com",
@@ -151,6 +151,7 @@ function initApp() {
             });
 
             startChat(state);
+            updateOnline();
         } else {
             $("#rooms").hide();
             $("#chatrooms").hide();
