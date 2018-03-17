@@ -150,9 +150,7 @@ function initApp() {
                 $("body").append(`<div id="user" style="position: absolute; top: 50px; left: 80%;">${username}</div>`)
             });
 
-
-
-
+            startChat(state);
         } else {
             $("#rooms").hide();
             $("#chatrooms").hide();

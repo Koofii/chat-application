@@ -149,6 +149,7 @@ function initApp() {
                 const username = snapshot.val().username;
                 $("body").append(`<div id="user" style="position: absolute; top: 50px; left: 80%;">${username}</div>`)
             });
+            startChat(state);
 
 
 

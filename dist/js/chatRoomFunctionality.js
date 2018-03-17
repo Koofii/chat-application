@@ -57,4 +57,3 @@ state.msg.on("keydown", function (e) {
     }
 });
 $("nav ul li").on("click", changeRoom);
-startChat(state);
