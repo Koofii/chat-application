@@ -8,12 +8,15 @@ const config = {
     messagingSenderId: "1075818501637"
 };
 firebase.initializeApp(config);
-$("#regform-sign-up").hide();
+$("#reg-form").hide();
+
 $("#become-gopnik p span").click(function(){
-    $("#regform-sign-up").show();
-    $("#regform-sign-in").hide();
-    $("#become-gopnik").hide();
-    $("#signin-signout").hide();
+    $("#sign-in-view").hide();
+    $("#reg-form").fadeIn();
+});
+$("#cancel-reg p").click(function(){
+    $("#sign-in-view").fadeIn();
+    $("#reg-form").hide();
 });
 // Vars for Firebase
 let db = firebase.database();
@@ -153,30 +156,28 @@ function initApp() {
             $("#sign-in-status").text("Signed in");
             $("#sign-in-button").text("Sign out");
             $("#account-details").text(JSON.stringify(user, null, "  "));
+            $("#sign-in-view").hide();
+            $("#reg-form").hide();
+            $("#chatrooms").fadeIn();
+            $("#input-box").fadeIn();
+            $("#rooms").fadeIn();
+            $("#div-button").fadeIn();
+            $("#list-of-users").fadeIn();
             // [END_EXCLUDE]
         } else {
             // User is signed out.
-            // [START_EXCLUDE]
-            $("#sign-in-button").show();
-            $("#sign-out-button").hide();
-            $("#regform-sign-in").show();
-            $("#reg-view").show();
+            $("#sign-in-view").fadeIn();
             $("#chatrooms").hide();
             $("#input-box").hide();
-            $("#list-of-users").hide();
             $("#rooms").hide();
-            $("#become-gopnik").show();
-            $("#sign-in-status").text("Signed out");
-            $("#sign-in-button").text("Sign in");
-            $("#account-details").text("null");
-            // [END_EXCLUDE]
+            $("#div-button").hide();
+            $("#list-of-users").hide();
         }
         // [START_EXCLUDE silent]
         $("#sign-in-button").prop("disabled, false");
         // [END_EXCLUDE]
     });
     // [END authstatelistener]
-
     $("#sign-in-button").click(toggleSignIn);
     $("#sign-up-button").click(handleSignUp);
     $("#sign-out-button").click(toggleSignIn);

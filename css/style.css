@@ -28,8 +28,11 @@ nav{
     grid-column: 1/2;
     border-right: 2px solid #707070;
     grid-row: 1/grid-row-end;
-    height: 100vh;
+    height: 100%;
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 li{
@@ -52,12 +55,21 @@ li{
 li:first-child{
     margin-top: 45px;
 }
+#div-button{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 100px;
+}
 #logo img{
     width: 100%;
     margin-top: 50px;
 }
-#reg-view{
+#sign-in-view{
     grid-column: 2/4;
+}
+#reg-form{
+    grid-column: 2/4;
+    max-width: 403px;
 }
 #become-gopnik p{
     margin: 0 auto;
@@ -78,16 +90,23 @@ li:first-child{
 }
 .regform input{
     width: 100%;
+    margin-top: 5px;
     padding: 7px;
-    margin: 5px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: rgb(83, 78, 78);
+    color: rgb(8, 2, 2);
 }
-.regform p{
-    margin-left: 18px;
+.regform div{
     margin-bottom: 10px;
     text-align: center;
     font-size: 20px;
+}
+#cancel-reg{
+    text-align: center;
+    margin-top: 25px;
+}
+#cancel-reg p{
+    cursor: pointer;
+    text-decoration: underline;
 }
 #signin-signout{
     text-align: center;
@@ -100,11 +119,7 @@ li:first-child{
     cursor: pointer;
     margin-left: 19px;
 }
-#div-button{
-    width: 100%;
-    text-align: center;
-    margin-top: 385px;
-}
+
 #sign-out-button{
     background-color: rgb(83, 78, 78);
     border: none;
@@ -118,8 +133,9 @@ li:first-child{
     padding: 8px 20px 8px 20px;
     cursor: pointer;
     width: 30%;
-    margin: 5px;
     margin: 0 auto;
+    margin-top: 25px;
+    
 }
 
 #chatrooms{
@@ -136,31 +152,40 @@ li:first-child{
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
 }
 .rooms div{
     width: 100%;
     display: flex;
-    
+    margin-top: 4px;
+    font-size: 15px;
+    margin: 3px 0px 3px 0px;
 }
 
 .user{
-    padding: 3px;
-    width: 11%;
+    padding-left: 10px;
+    width: 8%;
     font-family: 'Roboto Condensed', sans-serif;
-    margin: 3px 3px 3px 0px;
 }
 .user:after{
     content: ":"
 }
 .messages{
+<<<<<<< HEAD
     width: 70%;
     padding: 3px 0 3px 0;
     margin: 3px 3px 3px 0;
+=======
+    padding: 0;
+    width: 80%;
+>>>>>>> 538d4c13216d8bb9b87c0c7a60d97d9081500d05
     font-family: 'Roboto Condensed', sans-serif;
 }
 .time-stamp{
+    padding: 0;
+    margin-right: 15px;
     text-align: right;
-    width:10%;
+    width:auto;
     font-size: 12px;
     font-family: 'Roboto Condensed', sans-serif;
 }
@@ -172,9 +197,12 @@ li:first-child{
     height: 60vh;
     text-align: center;
     border-radius: 5px;
+    overflow-y: auto;
 }
 #list-of-users h2{
     margin-top: 40px;
+}#list-of-users ul li{
+    cursor: inherit;
 }
 #input-box{
     grid-column: 2/3;
@@ -188,7 +216,7 @@ li:first-child{
     width: 80%;
     height: 30px;
     border: none;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 #input-box input:last-child{
     width: 20%;

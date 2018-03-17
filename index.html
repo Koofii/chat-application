@@ -33,7 +33,7 @@
             <button id="sign-out-button">Sign out</button>
         </div>
     </nav>
-    <div id="reg-view" class="view">
+    <div id="sign-in-view">
         <div id="regform-sign-in" class="regform sign-in">
             <h3>Sign in!</h3>
             <input type="text" id="email-signin" name="email" placeholder="Email" />
@@ -49,10 +49,12 @@
                 <span>Click here!</span>
             </p>
         </div>
+    </div>
+    <div id="reg-form" class="view">
         <div id="regform-sign-up" class="regform sign-up">
-            <p>Fill your details below and become real GOPPP!!!</p>
-
-
+            <div>
+                <p>Fill your details below and become real GOPPP!!</p>
+            </div>
             <input type="text" id="fname" name="fname" placeholder="First name" />
 
             <input type="text" id="lname" name="lname" placeholder="Last name" />
@@ -63,13 +65,11 @@
 
             <input type="password" id="password" name="password" placeholder="Password" />
 
-
             <button id="sign-up-button" name="signup">Sign Up</button>
 
-            <button disabled id="verify-email" name="verify-email" style="display: none;">Send Email Verification</button>
-
-            <button id="password-reset" name="verify-email" style="display: none;">Send Password Reset Email</button>
-
+            <div id="cancel-reg">
+                <p>Go back/Cancel</p>
+            </div>
             <!-- Container where we'll display the user details - usefull for checking info -->
             <!-- <div class="user-details-container">
                     Firebase sign-in status: <span id="sign-in-status">Unknown</span>
