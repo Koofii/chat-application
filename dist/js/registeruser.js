@@ -1,4 +1,4 @@
-/* global firebase */
+/* global firebase, state, startChat */
 const config = {
     apiKey: "AIzaSyAl4qIrAr0pjNYnvPQLp3ubQ1jRipSmYTw",
     authDomain: "gopnik-chat.firebaseapp.com",
@@ -7,6 +7,7 @@ const config = {
     storageBucket: "gopnik-chat.appspot.com",
     messagingSenderId: "1075818501637"
 };
+
 firebase.initializeApp(config);
 $("#reg-form").hide();
 
@@ -36,14 +37,14 @@ function toggleSignIn() {
         removeUserFromOnlineList();
         firebase.auth().signOut();
     } else {
-        let email = $("#email-signin").val()
+        let email = $("#email-signin").val();
         let password = $("#password-signin").val();
         if (email.indexOf("@") === -1) {
-            $("#email-signin").prop('class', 'invalid');
+            $("#email-signin").prop("class", "invalid");
             return;
         }
         if (password.length < 4) {
-            $("#password-signin").prop('class', 'invalid');
+            $("#password-signin").prop("class", "invalid");
             alert("Please enter a password.");
             return;
         }
@@ -68,7 +69,7 @@ function toggleSignIn() {
                 } else {
                     alert(errorMessage);
                 }
-                console.log(error);
+
                 $(".sign-in-button").prop("disabled, false");
 
                 // [END_EXCLUDE]
@@ -109,7 +110,6 @@ function handleSignUp() {
         } else {
             alert(errorMessage);
         }
-        console.log(error);
         // [END_EXCLUDE]
     });
 
@@ -147,7 +147,7 @@ function initApp() {
 
             db.ref(`/users/${user.uid}`).on("value", snapshot => {
                 const username = snapshot.val().username;
-                $("body").append(`<div id="user" style="position: absolute; top: 50px; left: 80%;">${username}</div>`)
+                $("body").append(`<div id="user" style="position: absolute; top: 50px; left: 80%;">${username}</div>`);
             });
 
             startChat(state);
