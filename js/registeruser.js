@@ -140,6 +140,7 @@ function initApp() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
+            // JESUS FUCKING CHRIST
             $("#sign-out-button").show();
             $("#sign-in-button").hide();
             $("#rooms").show();
@@ -152,7 +153,6 @@ function initApp() {
             $("#sign-in-status").text("Signed in");
             $("#sign-in-button").text("Sign out");
             $("#account-details").text(JSON.stringify(user, null, "  "));
-
             // [END_EXCLUDE]
         } else {
             // User is signed out.
