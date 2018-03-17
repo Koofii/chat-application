@@ -54,10 +54,7 @@ function toggleSignIn() {
             .signInWithEmailAndPassword(email, password)
             .then(() => {
                 const currentUser = firebase.auth().currentUser;
-
-                db.ref(`/users/${currentUser.uid}`).once("value", snapshot => {
-                    db.ref(`/online/${currentUser.uid}`).set({ online: snapshot.val().username });
-                });
+                writeUserOnline(currentUser);
             })
             .catch(function (error) {
                 // Handle Errors here.
@@ -127,16 +124,26 @@ function handleSignUp() {
                         lastname: lName,
                     });
                 }
+            }).then(() => {
+                writeUserOnline(firebase.auth().currentUser);
             });
-            const currentUser = firebase.auth().currentUser;
-
-            db.ref(`/users/${currentUser.uid}`).once("value", snapshot => {
-                db.ref(`/online/${currentUser.uid}`).set({ online: snapshot.val().username });
-            });
+            $("#reg-form").hide();
+            
+            // db.ref(`/users/${currentUser.uid}`).once("value", snapshot => {
+            //     db.ref(`/online/${currentUser.uid}`).set({ online: snapshot.val().username });
+            // });
         }
     });
     // [END createwithemail]
 }
+
+function writeUserOnline(currentUser) {
+    db.ref(`/users/${currentUser.uid}`).once("value", snapshot => {
+        db.ref(`/online/${currentUser.uid}`).set({ online: snapshot.val().username });
+        $("body").append(`<div id="user" style="position: absolute; top: 50px; left: 80%;">${snapshot.val().username}</div>`);
+    });
+}
+
 
 function initApp() {
     // Listening for auth state changes.
@@ -150,13 +157,9 @@ function initApp() {
             $("#div-button").fadeIn();
             $("#sign-in-view").hide();
 
-            db.ref(`/users/${user.uid}`).on("value", snapshot => {
-                const username = snapshot.val().username;
-                $("body").append(`<div id="user" style="position: absolute; top: 50px; left: 80%;">${username}</div>`);
-            });
-
             startChat(state);
             updateOnline();
+            writeUserOnline(firebase.auth().currentUser);
         } else {
             $("#rooms").hide();
             $("#chatrooms").hide();
